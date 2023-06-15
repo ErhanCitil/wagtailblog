@@ -6,6 +6,11 @@
 #
 alabaster==0.7.13
     # via sphinx
+anyascii==0.3.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 asgiref==3.7.2
     # via
     #   -c requirements/ci.txt
@@ -23,10 +28,11 @@ async-timeout==4.0.2
     #   redis
 babel==2.12.1
     # via sphinx
-beautifulsoup4==4.12.2
+beautifulsoup4==4.11.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   wagtail
     #   webtest
 black==23.3.0
     # via -r requirements/dev.in
@@ -63,6 +69,11 @@ cssselect==1.2.0
     #   pyquery
 ddt-api-calls==0.3.2
     # via -r requirements/dev.in
+defusedxml==0.7.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   willow
 dill==0.3.6
     # via
     #   -c requirements/ci.txt
@@ -77,14 +88,21 @@ django==3.2.19
     #   django-axes
     #   django-debug-toolbar
     #   django-extensions
+    #   django-filter
     #   django-formtools
     #   django-hijack
     #   django-jenkins
+    #   django-modelcluster
     #   django-otp
+    #   django-permissionedforms
     #   django-phonenumber-field
     #   django-redis
     #   django-rosetta
+    #   django-taggit
+    #   django-treebeard
+    #   djangorestframework
     #   maykin-django-two-factor-auth
+    #   wagtail
 django-admin-index==3.0.0
     # via
     #   -c requirements/ci.txt
@@ -97,6 +115,11 @@ django-debug-toolbar==4.1.0
     # via -r requirements/dev.in
 django-extensions==3.2.3
     # via -r requirements/dev.in
+django-filter==22.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 django-formtools==2.4.1
     # via
     #   -c requirements/ci.txt
@@ -110,6 +133,11 @@ django-jenkins==0.110.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+django-modelcluster==6.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 django-ordered-model==3.7.4
     # via
     #   -c requirements/ci.txt
@@ -120,6 +148,11 @@ django-otp==1.2.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   maykin-django-two-factor-auth
+django-permissionedforms==0.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 django-phonenumber-field==5.2.0
     # via
     #   -c requirements/ci.txt
@@ -133,14 +166,34 @@ django-rosetta==0.9.9
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+django-taggit==3.1.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
+django-treebeard==4.7
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 django-webtest==1.9.10
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+djangorestframework==3.14.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 docutils==0.18.1
     # via
     #   sphinx
     #   sphinx-rtd-theme
+draftjs-exporter==2.1.7
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 ecs-logging==2.0.2
     # via
     #   -c requirements/ci.txt
@@ -150,6 +203,11 @@ elastic-apm==6.16.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+et-xmlfile==1.1.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   openpyxl
 factory-boy==3.2.1
     # via
     #   -c requirements/ci.txt
@@ -159,6 +217,11 @@ faker==18.10.1
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   factory-boy
+filetype==1.2.0
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   willow
 flake8==6.0.0
     # via
     #   -c requirements/ci.txt
@@ -171,6 +234,11 @@ gitdb==4.0.10
     # via gitpython
 gitpython==3.1.31
     # via -r requirements/dev.in
+html5lib==1.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 idna==3.4
     # via
     #   -c requirements/ci.txt
@@ -186,6 +254,11 @@ isort[colors]==5.12.0
     #   pylint
 jinja2==3.1.2
     # via sphinx
+l18n==2021.3
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 lazy-object-proxy==1.9.0
     # via
     #   -c requirements/ci.txt
@@ -210,6 +283,11 @@ mccabe==0.7.0
     #   pylint
 mypy-extensions==1.0.0
     # via black
+openpyxl==3.1.2
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 packaging==23.1
     # via
     #   black
@@ -225,6 +303,7 @@ pillow==9.5.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   wagtail
 pip-tools==6.13.0
     # via -r requirements/dev.in
 platformdirs==3.5.3
@@ -283,6 +362,9 @@ pytz==2023.3
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   django
+    #   django-modelcluster
+    #   djangorestframework
+    #   l18n
 qrcode==6.1
     # via
     #   -c requirements/ci.txt
@@ -301,6 +383,7 @@ requests==2.31.0
     #   django-rosetta
     #   requests-mock
     #   sphinx
+    #   wagtail
 requests-mock==1.11.0
     # via
     #   -c requirements/ci.txt
@@ -314,6 +397,8 @@ six==1.16.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+    #   html5lib
+    #   l18n
     #   python-dateutil
     #   qrcode
     #   requests-mock
@@ -357,6 +442,11 @@ tblib==1.7.0
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+telepath==0.3.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 tomli==2.0.1
     # via
     #   -c requirements/ci.txt
@@ -386,11 +476,20 @@ uwsgi==2.0.21
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
+wagtail==5.0.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
 waitress==2.1.2
     # via
     #   -c requirements/ci.txt
     #   -r requirements/ci.txt
     #   webtest
+webencodings==0.5.1
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   html5lib
 webob==1.8.7
     # via
     #   -c requirements/ci.txt
@@ -403,6 +502,11 @@ webtest==3.0.0
     #   django-webtest
 wheel==0.40.0
     # via pip-tools
+willow==1.5
+    # via
+    #   -c requirements/ci.txt
+    #   -r requirements/ci.txt
+    #   wagtail
 wrapt==1.15.0
     # via
     #   -c requirements/ci.txt
