@@ -114,6 +114,22 @@ INSTALLED_APPS = [
     # Project applications.
     "wagtailblog.accounts",
     "wagtailblog.utils",
+
+    # Wagtail core apps
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+
+    'modelcluster',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +144,7 @@ MIDDLEWARE = [
     "axes.middleware.AxesMiddleware",
     "hijack.middleware.HijackUserMiddleware",
     "django_otp.middleware.OTPMiddleware",
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = "wagtailblog.urls"
@@ -459,3 +476,5 @@ if not ELASTIC_APM_SERVER_URL:
 SUBPATH = config("SUBPATH", None)
 if SUBPATH:
     SUBPATH = f"/{SUBPATH.strip('/')}"
+
+WAGTAIL_SITE_NAME = 'Wagtail Blog - Erhan'
