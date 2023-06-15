@@ -9,6 +9,10 @@ from django.views.generic.base import TemplateView
 
 from wagtailblog.accounts.views.password_reset import PasswordResetView
 
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail import urls as wagtail_urls
+from wagtail.documents import urls as wagtaildocs_urls
+
 handler500 = "wagtailblog.utils.views.server_error"
 admin.site.site_header = "wagtailblog admin"
 admin.site.site_title = "wagtailblog admin"
@@ -26,7 +30,6 @@ urlpatterns = [
         name="password_reset_done",
     ),
     path("admin/hijack/", include("hijack.urls")),
-    path("admin/", admin.site.urls),
     path(
         "reset/<uidb64>/<token>/",
         auth_views.PasswordResetConfirmView.as_view(),
@@ -38,7 +41,9 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     # Simply show the master template.
-    path("", TemplateView.as_view(template_name="master.html"), name="root"),
+    path('admin/', include(wagtailadmin_urls)),
+    path('documents/', include(wagtaildocs_urls)),
+    path('', include(wagtail_urls)),
 ]
 
 # NOTE: The staticfiles_urlpatterns also discovers static files (ie. no need to run collectstatic). Both the static
