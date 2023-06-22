@@ -10,6 +10,7 @@ def get_subclasses(cls):
         yield from get_subclasses(subclass)
         yield subclass
 
+
 @register
 def check_missing_init_files(app_configs, **kwargs):
     """

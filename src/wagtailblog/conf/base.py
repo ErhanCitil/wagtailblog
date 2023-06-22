@@ -114,22 +114,22 @@ INSTALLED_APPS = [
     # Project applications.
     "wagtailblog.accounts",
     "wagtailblog.utils",
-
     # Wagtail core apps
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail',
-
-    'modelcluster',
-    'taggit',
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail",
+    "modelcluster",
+    "taggit",
+    # Django Apps
+    "wagtailblog.pages",
 ]
 
 MIDDLEWARE = [
@@ -144,7 +144,7 @@ MIDDLEWARE = [
     "axes.middleware.AxesMiddleware",
     "hijack.middleware.HijackUserMiddleware",
     "django_otp.middleware.OTPMiddleware",
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 ROOT_URLCONF = "wagtailblog.urls"
@@ -176,7 +176,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "wagtailblog.wsgi.application"
 
 # Translations
-LOCALE_PATHS = (DJANGO_PROJECT_DIR / "conf" / "locale", )
+LOCALE_PATHS = (DJANGO_PROJECT_DIR / "conf" / "locale",)
 
 #
 # SERVING of static and media files
@@ -370,7 +370,9 @@ elif (BASE_DIR / ".git").exists():
         repo = git.Repo(search_parent_directories=True)
         try:
             GIT_SHA = repo.head.object.hexsha
-        except ValueError:  # on startproject initial runs before any git commits have been made
+        except (
+            ValueError
+        ):  # on startproject initial runs before any git commits have been made
             GIT_SHA = repo.active_branch.name
 else:
     GIT_SHA = None
@@ -407,12 +409,12 @@ AXES_COOLOFF_TIME = 1
 # If True only locks based on user id and never locks by IP if attempts limit
 # exceed, otherwise utilize the existing IP and user locking logic Default:
 # False
-AXES_ONLY_USER_FAILURES = True
 # If set, specifies a template to render when a user is locked out. Template
 # receives cooloff_time and failure_limit as context variables. Default: None
 AXES_LOCKOUT_TEMPLATE = "account_blocked.html"
-AXES_USE_USER_AGENT = True  # Default: False
-AXES_LOCK_OUT_BY_COMBINATION_USER_AND_IP = True  # Default: False
+
+AXES_LOCKOUT_PARAMETERS = ["username", "email", "ip"]
+
 
 # The default meta precedence order
 IPWARE_META_PRECEDENCE_ORDER = (
@@ -477,4 +479,5 @@ SUBPATH = config("SUBPATH", None)
 if SUBPATH:
     SUBPATH = f"/{SUBPATH.strip('/')}"
 
-WAGTAIL_SITE_NAME = 'Wagtail Blog - Erhan'
+WAGTAIL_SITE_NAME = "Wagtail Blog - Erhan"
+WAGTAILADMIN_BASE_URL = "Wagtail Blog - Erhan   "
