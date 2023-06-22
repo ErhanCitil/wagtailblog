@@ -114,25 +114,22 @@ INSTALLED_APPS = [
     # Project applications.
     "wagtailblog.accounts",
     "wagtailblog.utils",
-
     # Wagtail core apps
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail',
-
-    'modelcluster',
-    'taggit',
-
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail",
+    "modelcluster",
+    "taggit",
     # Django Apps
-    'wagtailblog.pages',
+    "wagtailblog.pages",
 ]
 
 MIDDLEWARE = [
@@ -147,7 +144,7 @@ MIDDLEWARE = [
     "axes.middleware.AxesMiddleware",
     "hijack.middleware.HijackUserMiddleware",
     "django_otp.middleware.OTPMiddleware",
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 ROOT_URLCONF = "wagtailblog.urls"
@@ -179,7 +176,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "wagtailblog.wsgi.application"
 
 # Translations
-LOCALE_PATHS = (DJANGO_PROJECT_DIR / "conf" / "locale", )
+LOCALE_PATHS = (DJANGO_PROJECT_DIR / "conf" / "locale",)
 
 #
 # SERVING of static and media files
@@ -373,7 +370,9 @@ elif (BASE_DIR / ".git").exists():
         repo = git.Repo(search_parent_directories=True)
         try:
             GIT_SHA = repo.head.object.hexsha
-        except ValueError:  # on startproject initial runs before any git commits have been made
+        except (
+            ValueError
+        ):  # on startproject initial runs before any git commits have been made
             GIT_SHA = repo.active_branch.name
 else:
     GIT_SHA = None
@@ -415,7 +414,6 @@ AXES_COOLOFF_TIME = 1
 AXES_LOCKOUT_TEMPLATE = "account_blocked.html"
 
 AXES_LOCKOUT_PARAMETERS = ["username", "email", "ip"]
-
 
 
 # The default meta precedence order
@@ -481,5 +479,5 @@ SUBPATH = config("SUBPATH", None)
 if SUBPATH:
     SUBPATH = f"/{SUBPATH.strip('/')}"
 
-WAGTAIL_SITE_NAME = 'Wagtail Blog - Erhan'
-WAGTAILADMIN_BASE_URL = 'Wagtail Blog - Erhan   '
+WAGTAIL_SITE_NAME = "Wagtail Blog - Erhan"
+WAGTAILADMIN_BASE_URL = "Wagtail Blog - Erhan   "
