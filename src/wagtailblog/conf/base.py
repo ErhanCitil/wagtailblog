@@ -130,6 +130,9 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+
+    # Django Apps
+    'wagtailblog.pages',
 ]
 
 MIDDLEWARE = [
